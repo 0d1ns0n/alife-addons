@@ -1,0 +1,7 @@
+name=Лагерь: поселения
+id=ALifeCamp
+author=0d1ns0n
+modversion=0.6
+versionMin=42.21.0
+require=ProjectALifeNPCs
+description=Размечаешь землю четырьмя флажками, зовёшь людей из пустошей, и они строят лагерь: склад, укрепления, дома, огороды. Расширяется, укрепляется, ведёт статистику. Включать ПОСЛЕ Project A-Life.

@@ -1,0 +1,16 @@
+module ALifeCamp
+{
+    imports
+    {
+        Base
+    }
+
+    item CampFlag
+    {
+        DisplayCategory = Material,
+        ItemType = base:normal,
+        Weight = 0.3,
+        Icon = ALCFlag,
+        WorldStaticModel = Base.Stake,
+    }
+}
