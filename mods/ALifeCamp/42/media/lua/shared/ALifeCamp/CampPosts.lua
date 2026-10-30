@@ -454,14 +454,19 @@ function Posts.specs(geo, tier)
             u1 = Posts.houseLeft, v1 = 0, u2 = Posts.houseRight, v2 = Posts.houseDepth,
         }
         list[#list + 1] = { kind = "bay", part = "bay", u1 = Posts.bayLeft, v1 = 0, u2 = Posts.bayRight, v2 = Posts.bayDepth }
-        local l, r = Posts.towerLeft, Posts.towerRight
-        list[#list + 1] = { kind = "tower", part = "towerL", fixed = true, u1 = l[1], v1 = l[2], u2 = l[3], v2 = l[4] }
-        list[#list + 1] = { kind = "tower", part = "towerR", fixed = true, u1 = r[1], v1 = r[2], u2 = r[3], v2 = r[4] }
-    else
-        list[#list + 1] = { kind = "tower", part = "towerL", fixed = true, u1 = -7, v1 = 0, u2 = -6, v2 = 1 }
-        list[#list + 1] = { kind = "tower", part = "towerR", fixed = true, u1 = 6, v1 = 0, u2 = 7, v2 = 1 }
     end
     return list
+end
+
+function Posts.dropLegacyTowers(camp)
+    local doomed = {}
+    for _, project in pairs(Build.plan(camp).items) do
+        if project.kind == "tower" and (project.part == "towerL" or project.part == "towerR") then
+            doomed[#doomed + 1] = project.id
+        end
+    end
+    for _, id in ipairs(doomed) do Build.remove(camp, id) end
+    return #doomed
 end
 
 local function placeNear(camp, kind, geo, u, v, radius, extra)
@@ -685,6 +690,7 @@ if Hooks ~= nil then
         return { Hooks.line(ALifeCamp.T("Checkpoint_overview", tostring(done), tostring(#posts)), 0.58, 0.68, 0.86) }
     end, 12)
     Hooks.add("minute", function(camp)
+        Posts.dropLegacyTowers(camp)
         if camp.raid ~= nil then return end
         local posts = Posts.projects(camp, "post")
         local n = #posts

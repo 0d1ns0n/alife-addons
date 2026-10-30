@@ -124,6 +124,17 @@ function Options.lines(camp)
         if not known then order[#order + 1] = group end
     end
     lines[1] = { text = T("OptHelp"), r = 0.7, g = 0.7, b = 0.75 }
+    if ALifeCamp.Lang ~= nil then
+        lines[#lines + 1] = { text = "" }
+        lines[#lines + 1] = { text = T("OptGroup_lang"), r = 0.6, g = 0.85, b = 1 }
+        lines[#lines + 1] = {
+            text = T("LangRow", ALifeCamp.Lang.label()),
+            r = 1, g = 0.9, b = 0.55, hover = true,
+            click = function() ALifeCamp.Lang.cycle() end,
+        }
+        local langHint = ALifeCamp.TN("LangHint")
+        if langHint ~= nil then lines[#lines + 1] = { text = langHint, r = 0.62, g = 0.62, b = 0.68, indent = 18 } end
+    end
     for _, group in ipairs(order) do
         if grouped[group] ~= nil then
             lines[#lines + 1] = { text = "" }

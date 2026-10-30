@@ -18,6 +18,8 @@
 <img src="https://img.shields.io/badge/built%20with-Lua-000080?style=flat-square&logo=lua&logoColor=white" alt="Lua"/>
 <img src="https://img.shields.io/badge/status-active%20%7C%20always%20improving-blue?style=flat-square" alt="status"/>
 <img src="https://img.shields.io/badge/tested-in--game-brightgreen?style=flat-square" alt="tested in-game"/>
+<br/>
+<img src="https://img.shields.io/badge/languages-EN%20%C2%B7%20RU%20%C2%B7%20UK%20%C2%B7%20DE%20%C2%B7%20IT-9c27b0?style=flat-square" alt="languages"/>
 
 </div>
 
@@ -114,6 +116,12 @@ A settlement is promoted only when **population, size _and_ building count** all
 </table>
 
 <br/>
+
+## ✦ Languages
+
+ALifeCamp speaks **English, Русский, Українська, Deutsch and Italiano**. It follows the language you pick in the game's own **Options → Language** automatically — that menu is the one chooser for everything. Prefer a different language just for the mod? Open the camp window (**F6 → Settings**) and click the **Language** line to cycle **Auto → English → Русский → Українська → Deutsch → Italiano**; the choice is remembered and overrides only ALifeCamp. Anything a language is missing falls back to English.
+
+> Translations are community-grade and easy to extend — drop a `Translate/<CODE>/UI.json` next to the others. Corrections welcome via issues.
 
 ## ✦ Install & load order
 
