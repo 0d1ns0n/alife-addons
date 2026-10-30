@@ -25,7 +25,9 @@ def run(name):
     g.ADDON = ADDON.as_posix()
     g.MOCK = (HERE / "camp_mock.lua").as_posix()
     ui = json.load(open(ROOT / "shared" / "Translate" / "RU" / "UI.json", encoding="utf-8"))
-    ui.update(json.load(open(ADDON / "shared" / "Translate" / "RU" / "UI.json", encoding="utf-8")))
+    addon_ui = ADDON / "shared" / "Translate" / "RU" / "UI.json"
+    if addon_ui.exists():
+        ui.update(json.load(open(addon_ui, encoding="utf-8")))
     g.UIJSON = lua.table_from(ui)
     source = open(HERE / (name + ".lua"), encoding="utf-8").read()
     try:

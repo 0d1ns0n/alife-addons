@@ -1,55 +1,174 @@
-# A-Life Add-ons for Project Zomboid (Build 42)
+<!-- ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░ -->
 
-Add-ons for [Project A-Life NPCs](https://steamcommunity.com/workshop/) that turn Build 42.21 from a lonely survival sandbox into a **living world you can shape and belong to**. By [0d1ns0n](https://github.com/0d1ns0n).
+<div align="center">
 
-> Project Zomboid is a world you survive *alone*. Project A-Life fills it with living NPCs. These mods go one step further: let you **recruit those people, build a real community with them, and have the world live around you** — raids, gangs, a sheriff, refugees, supply drops — in your own language.
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f2027,50:203a43,100:2c5364&height=210&section=header&text=A-Life%20Add-ons&fontSize=72&fontColor=ffffff&fontAlignY=36&desc=Build%20a%20living%20settlement%20in%20Project%20Zomboid&descSize=20&descAlignY=60&animation=fadeIn" width="100%" alt="A-Life Add-ons"/>
 
-## The idea / where this is going
+<a href="https://readme-typing-svg.demolab.com">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=3400&pause=900&color=4CAF50&center=true&vCenter=true&width=820&lines=Mark+the+land.+Call+the+survivors.;They+clear%2C+build%2C+farm+and+defend+%E2%80%94+on+their+own.;Camp+%E2%86%92+Outpost+%E2%86%92+Village+%E2%86%92+Town+%E2%86%92+City." alt="tagline"/>
+</a>
 
-There is no "final" version. This is a long-running hobby project that keeps improving toward a moving **reference standard**: the best layout, the best behaviour, the smartest world. The direction:
+<br/><br/>
 
-- **A settlement that builds itself.** You mark out land with four flags and invite wanderers; they clear the plot, raise a walled perimeter with working gates, checkpoints, houses, farms, watchtowers, a garage and a motor pool, recycle junk, level up, and fight off raids — on their own.
-- **It grows camp → outpost → village → town → city.** A tier model drives how big and how complex a settlement gets, with hysteresis so a bad week never demotes it.
-- **It self-heals toward the latest design.** When the mod improves, existing settlements should **auto-converge** to the new standard on reload — tear down the old, build the new — instead of you regenerating the map by hand.
-- **The world lives.** Scripted events (raids, gang wars, bikers, arson, a sheriff response, roadblocks, ambushes, refugees, supply drops, helicopter crashes, horde marches, military sweeps) keep the map moving, and everything — speech, radio, UI — is localized.
-- **It stays passable and believable.** Real tile paths connect every building so NPCs don't get stuck; nothing builds on water; zoning keeps a shooting range away from the bedrooms.
+<img src="https://img.shields.io/badge/Project%20Zomboid-Build%2042.21-8bc34a?style=for-the-badge&logo=steam&logoColor=white" alt="PZ B42.21"/>
+<img src="https://img.shields.io/badge/ALifeCamp-0.6-2e7d32?style=for-the-badge" alt="ALifeCamp 0.6"/>
+<img src="https://img.shields.io/badge/ALifeRU-0.2-2e7d32?style=for-the-badge" alt="ALifeRU 0.2"/>
+<img src="https://img.shields.io/badge/requires-Project%20A--Life%20NPCs-ff7043?style=for-the-badge" alt="requires A-Life"/>
+<br/>
+<img src="https://img.shields.io/badge/built%20with-Lua-000080?style=flat-square&logo=lua&logoColor=white" alt="Lua"/>
+<img src="https://img.shields.io/badge/status-active%20%7C%20always%20improving-blue?style=flat-square" alt="status"/>
+<img src="https://img.shields.io/badge/engine--model%20tests-passing-brightgreen?style=flat-square" alt="tests"/>
 
-## What's inside
+</div>
 
-| Mod | Version | What it does | Requires |
-|---|---|---|---|
-| [ALifeCamp](mods/ALifeCamp) | 0.6 | **Settlements.** Flag off land, invite A-Life NPCs, and they clear it and build/run a camp: storage, walled perimeter with gates, checkpoints, houses, farms, watchtowers, garage, motor pool; they recycle, skill up and defend. Grows to a town. | Project A-Life NPCs |
-| [ALifeRU](mods/ALifeRU) | 0.2 | **Russian localization of Project A-Life** (speech, radio, UI) + a pack of 16 **living-world events**. | Project A-Life NPCs |
+<br/>
 
-Details: [ALifeCamp](docs/ALifeCamp.md) · [ALifeRU](docs/ALifeRU.md) ([event list](docs/ALifeRU-events.md)).
+<div align="center">
+  <img src="docs/img/hero-watchtowers.jpg" width="92%" alt="A settlement built by ALifeCamp: concrete perimeter wall, twin watchtowers, inner courtyard and gardens"/>
+  <br/>
+  <sub><i>A settlement raised by the settlers themselves — perimeter wall, twin watchtowers, courtyard and gardens. Shown in the author's game running the 3D <b>Viewpoint</b> mod with shaders; base Project Zomboid is isometric (see the night shot below).</i></sub>
+</div>
 
-## Requirements & load order
+<br/>
 
-1. Project A-Life NPCs
-2. **ALifeRU**
-3. **ALifeCamp**
+## ✦ The idea
 
-Build 42.21. Lua is read only at launch, so enable the mods in-game and restart.
+> **Project Zomboid is a world you survive _alone_. [Project A-Life](https://steamcommunity.com/workshop/) fills it with living NPCs. These add-ons let you _belong_ to it.**
 
-## Install
+Mark out land with four flags and invite the wanderers you meet. From there they do the rest — clear the plot, raise a walled perimeter with working gates, build checkpoints, houses, farms, watchtowers, a garage and a motor pool, recycle junk, level up their skills, and hold the line when raiders come.
 
-Copy the folders from `mods/` into `%UserProfile%\Zomboid\mods`, or run:
+There is **no final version**. This is a long-running project that keeps converging toward a moving **reference standard**: the best layout, the smartest behaviour, the most alive world. When the standard improves, existing settlements **auto-rebuild toward it on reload** — tearing down the old and raising the new — so you never have to regenerate anything by hand.
+
+<br/>
+
+## ✦ What's inside
+
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🏰 ALifeCamp
+**Settlements that build themselves.**
+Flag off any plot, invite A-Life NPCs, and watch a real community grow: storage, a walled perimeter with gates, defended checkpoints, houses, farms, watchtowers, a garage & motor pool. Settlers clear land, recycle, farm, skill up and fight off raids on their own. Grows **camp → city**.
+
+`requires` Project A-Life NPCs
+
+</td>
+<td width="50%" valign="top">
+
+### 📻 ALifeRU
+**A living, Russian-speaking world.**
+Full Russian localization of Project A-Life (speech, radio, UI) plus a pack of **16 world events** — raids, gang wars, bikers, arson, a sheriff response, roadblocks, ambushes, refugees, supply drops, chopper crashes, horde marches, military sweeps.
+
+`requires` Project A-Life NPCs
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+## ✦ How a settlement builds itself
+
+Every in-game minute the settlement runs one step of a real pipeline:
+
+| Phase | What the settlers do |
+|:--|:--|
+| 🧹 **Clear** | Fell trees, cut grass, haul junk, remove wrecks & corpses — logs and planks go to storage |
+| 📐 **Plan** | Auto-draft and extend a layout: perimeter fence, gates, checkpoints, storage, houses, farms, towers, plaza, streets, lamps, market, wells, gardens, garage, range |
+| 🔨 **Build** | Raise it stage-by-stage from real vanilla tiles; speed scales with builders and their skill |
+| 📦 **Supply** | Bottomless crates; settlers haul boards, nails, metal, food, water, meds, ammo, seeds |
+| ♻️ **Economy** | Saw logs → planks, recycle scrap → cloth/metal, forge nails, harvest crops, scavenge nearby houses |
+| 🛡️ **Defend** | Walls, towers, checkpoints, vehicles on posts, armed guards; raids hit the gates |
+| 📈 **Grow** | When it's built and peopled, the border pushes outward and the tier climbs |
+
+<br/>
+
+### Settlement tiers
+
+```mermaid
+flowchart LR
+    A([🏕️ Camp]) --> B([⛺ Outpost]) --> C([🏘️ Village]) --> D([🏙️ Town]) --> E([🌆 City])
+    style A fill:#37474f,stroke:#90a4ae,color:#fff
+    style B fill:#33691e,stroke:#aed581,color:#fff
+    style C fill:#1b5e20,stroke:#81c784,color:#fff
+    style D fill:#0d47a1,stroke:#64b5f6,color:#fff
+    style E fill:#4a148c,stroke:#ba68c8,color:#fff
+```
+
+A settlement is promoted only when **population, size _and_ building count** all cross the next threshold (roughly **5 → 12 → 25 → 50** settlers), and it never gets demoted on a bad week.
+
+<br/>
+
+## ✦ Gallery
+
+<table>
+<tr>
+<td width="50%"><img src="docs/img/courtyard-garden.jpg" alt="Courtyard with twin watchtowers and garden plots"/><br/><sub>Inner courtyard, twin watchtowers & garden plots</sub></td>
+<td width="50%"><img src="docs/img/gate-garden.jpg" alt="Perimeter gate and gardens under a storm sky"/><br/><sub>Perimeter gate and gardens</sub></td>
+</tr>
+<tr>
+<td width="50%"><img src="docs/img/iso-town-night.jpg" alt="Isometric night view — the native Project Zomboid perspective"/><br/><sub>The native isometric view at night</sub></td>
+<td width="50%"><img src="docs/img/yard-fences.jpg" alt="Fenced yards and paths inside the settlement"/><br/><sub>Fenced lots and tidy paths between buildings</sub></td>
+</tr>
+</table>
+
+<br/>
+
+## ✦ Install & load order
+
+Enable in-game, then **restart** — Project Zomboid reads Lua only at launch.
 
 ```
+1. Project A-Life NPCs
+2. ALifeRU
+3. ALifeCamp
+```
+
+Copy the folders from [`mods/`](mods) into `%UserProfile%\Zomboid\mods`, or run:
+
+```bash
 python tools/install.py
 ```
 
-## Development
+Open the camp window with **F6**: take the four flags, place them at the corners, create the camp, then right-click a friendly A-Life NPC → **Camp → Invite**.
 
-Mods are edited live in the game folder and mirrored here with a script:
+<details>
+<summary><b>More details & docs</b></summary>
 
-```
-python tools/sync_from_game.py     # copy ALifeCamp + ALifeRU from the game into mods/
-python tools/tests/run_tests.py    # engine-model tests for the settlement logic
-```
+- 📖 [ALifeCamp guide](docs/ALifeCamp.md) — every phase, window tabs, gates, vehicles, skills, options
+- 📻 [ALifeRU guide](docs/ALifeRU.md) · [full event list](docs/ALifeRU-events.md)
+- 🛠️ [Development](docs/DEVELOPMENT.md) — how the code is laid out, the engine-model tests, the sync workflow
+- 🤝 [Sharing](docs/SHARING.md) — collaborators, friend archives, Steam Workshop
 
-See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) and [docs/SHARING.md](docs/SHARING.md).
+</details>
 
-## Third-party content & license
+<br/>
 
-ALifeRU contains **Russian translations of Project A-Life strings** — ask the A-Life author before publishing these publicly. The repository is **private** for now and no license is granted: all rights reserved by the author. A `LICENSE` must be added before going public.
+## ✦ Roadmap
+
+- [x] Self-building settlements with clear → plan → build → defend loop
+- [x] Walled perimeter, wide vehicle gates, defended checkpoints, watchtowers
+- [x] Tier model (camp → city) with hysteresis
+- [x] House adoption, farms & gardens, recycling economy, power grid
+- [x] Auto-converge old settlements to the latest design standard on reload
+- [ ] Richer combat-ready checkpoints (post-apocalyptic blockpost designs)
+- [ ] Compact camp UI with an overall build % and a tiled project grid
+- [ ] More believable construction animations & settler attachment
+- [ ] Keep closing the gap to the reference standard, update after update
+
+<br/>
+
+## ✦ Credits & permissions
+
+- Built on top of **Project A-Life NPCs** — these are add-ons that require it. All credit for A-Life goes to its author.
+- **ALifeRU** includes Russian translations of Project A-Life's in-game strings, used to localize the mod and credited to the original work. If you are the A-Life author and would like a change, please open an issue.
+- Developed for Project Zomboid **Build 42.21** by [**0d1ns0n**](https://github.com/0d1ns0n). Screenshots are from the author's own game.
+
+> **License:** personal project — all rights reserved. You're welcome to play with it and open issues; please ask before redistributing, especially the translated strings.
+
+<br/>
+
+<div align="center">
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2c5364,50:203a43,100:0f2027&height=120&section=footer" width="100%" alt=""/>
+</div>
