@@ -17,7 +17,7 @@
 <br/>
 <img src="https://img.shields.io/badge/built%20with-Lua-000080?style=flat-square&logo=lua&logoColor=white" alt="Lua"/>
 <img src="https://img.shields.io/badge/status-active%20%7C%20always%20improving-blue?style=flat-square" alt="status"/>
-<img src="https://img.shields.io/badge/engine--model%20tests-passing-brightgreen?style=flat-square" alt="tests"/>
+<img src="https://img.shields.io/badge/tested-in--game-brightgreen?style=flat-square" alt="tested in-game"/>
 
 </div>
 

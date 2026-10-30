@@ -626,9 +626,11 @@ function Window:cacheKey(camp)
 end
 
 function Window:cachedLines(camp)
-    if self.linesCache == nil or self.linesKey ~= self:cacheKey(camp) then return nil end
-    if nowMs() - (self.linesAt or 0) > Window.pageTtl then return nil end
-    return self.linesCache
+    local cache = rawget(self, "linesCache")
+    if type(cache) ~= "table" then return nil end
+    if rawget(self, "linesKey") ~= self:cacheKey(camp) then return nil end
+    if nowMs() - (rawget(self, "linesAt") or 0) > Window.pageTtl then return nil end
+    return cache
 end
 
 function Window:storeLines(camp, lines)
